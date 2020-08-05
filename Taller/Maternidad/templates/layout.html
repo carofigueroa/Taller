@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="utf-8"/> <!--Para que reconozca la ñ y tildes--> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    {% block head %}
+    {% endblock  %}
+</head>
+<body> 
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'Inicio' %}">Inicio</a>
+            </li>
+          
+            <li>
+                <a href={% url 'cirugia'%}>Cirugias</a>
+            </li>
+            <li>
+                <a href="{% url 'Medicamentos' %}">Medicamentos</a>
+            </li>
+            <li>
+                <a href="{% url 'Embarazos' %}">Embarazos</a>
+            </li>
+            <li>
+                <a href="{% url 'Camas' %}">Camas</a>
+            </li>
+            <li>
+                <a href="/admin/">Administrador</a>
+            </li>
+
+           
+    
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <div id="content">
+        <div class="caja">
+            {%block content%}
+            <!--Codigo que viene de templates-->
+            {%endblock%}
+    
+        </div>
+    </div>
+
+    <footer>
+       Hospital San Juan de Dios de Cauquenes &copy; Unidad Gineco - Obstetra 
+    </footer>
+</body>
+</html>
